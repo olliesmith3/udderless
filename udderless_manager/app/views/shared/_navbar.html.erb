@@ -28,10 +28,7 @@
 
         <div class="navbar-dropdown">
           <a class="navbar-item">
-            About
-          </a>
-          <a class="navbar-item">
-            Jobs
+            <%= link_to 'Customers', customers_path %>
           </a>
           <a class="navbar-item">
             Contact
@@ -47,12 +44,12 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light">
-            Log in
-          </a>
+          <% if user_signed_in? %>
+            <%= button_to 'Log out', destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= button_to 'Sign Up', new_user_registration_path %>
+            <%= button_to 'Log in', new_user_session_path %>
+          <% end %>
         </div>
       </div>
     </div>
