@@ -1,0 +1,15 @@
+<h1 class="subtitle content">
+Name: <%= @customer.first_name %> 
+<%= @customer.last_name %></h1>
+<h1 class="subtitle content">
+  Address: 
+  <div>
+    <%= @customer.address_line_1 %><br />
+    <%= @customer.address_line_2 %><br />
+    <%= @customer.town %><br />
+    <%= @customer.county %><br />
+    <%= @customer.postcode %><br />
+  </div>
+</h1>
+<h1 class="subtitle content">Email: <%= @customer.email %></h1>
+<h1 class="subtitle content">Phone: <%= @customer.tel %></h1>

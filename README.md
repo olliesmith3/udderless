@@ -74,3 +74,7 @@ There are other types of injection vulnerabilities too - JS injection etc.
 ### Tech stack - 
 
   Staff website => RoR?, Postgres, React front end?
+
+### More notes from meeting 07/12/20
+
+  Ollie - Need email authentication to prove that user is ollie, luke or barny.

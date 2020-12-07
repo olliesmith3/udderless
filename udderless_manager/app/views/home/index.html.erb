@@ -1,13 +1,10 @@
 <% name = current_user.present? ? current_user.email : 'Stranger' %>
-<h1>Welcome, <%= name %></h1>
 <section class="section">
   <div class="container">
     <h1 class="title">
-      Hello World
+      Welcome, <%= name %>
     </h1>
-    <p class="subtitle">
-      My first website with <strong>Bulma yo</strong>!
-    </p>
+    <%= image_tag("TM-logo.gif") %>
   </div>
 </section>
 
