@@ -8,7 +8,7 @@
           <div class="media">
             <div class="media-content">
               <p class="subtitle is-4">
-                <%= link_to "order.id", order %>
+                <%= link_to order.id, customer_order_path(@customer.id, order.id) %>
               </p>
             </div>
           </div>
