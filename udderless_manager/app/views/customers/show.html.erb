@@ -13,3 +13,7 @@ Name: <%= @customer.first_name %>
 </h1>
 <h1 class="subtitle content">Email: <%= @customer.email %></h1>
 <h1 class="subtitle content">Phone: <%= @customer.tel %></h1>
+
+<div class="button is-primary">
+  <%= link_to "New Order", new_customer_order_path(@customer) %>
+</div>

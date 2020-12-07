@@ -78,3 +78,7 @@ There are other types of injection vulnerabilities too - JS injection etc.
 ### More notes from meeting 07/12/20
 
   Ollie - Need email authentication to prove that user is ollie, luke or barny.
+
+  Be able to add weekly, fornightly and monthly orders
+
+  Set database up with Postgres

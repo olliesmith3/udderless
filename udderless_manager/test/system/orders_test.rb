@@ -15,7 +15,7 @@ class OrdersTest < ApplicationSystemTestCase
     click_on "New Order"
 
     fill_in "Quantity", with: @order.quantity
-    fill_in "User", with: @order.user_id
+    fill_in "User", with: @order.customer_id
     click_on "Create Order"
 
     assert_text "Order was successfully created"
@@ -27,7 +27,7 @@ class OrdersTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Quantity", with: @order.quantity
-    fill_in "User", with: @order.user_id
+    fill_in "User", with: @order.customer_id
     click_on "Update Order"
 
     assert_text "Order was successfully updated"
