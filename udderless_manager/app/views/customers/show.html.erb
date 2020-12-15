@@ -22,3 +22,6 @@ Name: <%= @customer.first_name %>
   <% button_badge = @customer.first_name + "'s Orders" %>
   <%= link_to button_badge, customer_orders_path(@customer) %>
 </div>
+<div class="button is-primary">
+  <%= link_to "Edit Customer Details", edit_customer_path(@customer) %>
+</div>

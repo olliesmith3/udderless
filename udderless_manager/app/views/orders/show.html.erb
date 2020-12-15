@@ -18,13 +18,17 @@
 <h1>Customer email: <%= @customer.email %></h1>
 <h1>Customer phone: <%= @customer.tel %></h1>
 <% if @order.completed == true %> 
-  <div>
-    <%= button_to "Undo Complete Order", undo_complete_order_path(@customer, @order), method: :put %>
+  <div class="button is-primary">
+    <%= link_to "Undo Complete Order", undo_complete_order_path(@customer, @order), method: :put %>
   </div>
 <% else %>
-  <div>
-    <%= button_to "Complete", complete_order_path(@customer, @order), method: :put %>
+  <div class="button is-primary">
+    <%= link_to "Complete", complete_order_path(@customer, @order), method: :put %>
   </div>
 <% end %>
-<%= button_to "Edit", edit_customer_order_path(@customer, @order), method: :get %>
-<%= button_to "Delete", customer_order_path(@customer, @order), method: :delete %>
+<div class="button is-primary">
+  <%= link_to "Edit", edit_customer_order_path(@customer, @order), method: :get %>
+</div>
+<div class="button is-primary">
+  <%= link_to "Delete", customer_order_path(@customer, @order), method: :delete %>
+</div>

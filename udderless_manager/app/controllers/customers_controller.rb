@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
   before_action :authenticate_user!, :check_staff
+  before_action :set_customer, only: [:show, :edit, :update]
 
   def index
     check_staff
@@ -21,7 +22,17 @@ class CustomersController < ApplicationController
   end
 
   def show
-    @customer = Customer.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @customer.update(customer_params)
+      redirect_to customer_path(@customer), notice: 'Customer was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   private
@@ -34,6 +45,10 @@ class CustomersController < ApplicationController
     unless current_user.email == "ollie@udderless.co.uk"
       redirect_to root_path, notice: "You are not one of the boys" 
     end
+  end
+
+  def set_customer
+    @customer = Customer.find(params[:id])
   end
 
 end
