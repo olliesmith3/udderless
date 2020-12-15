@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :get_customer
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_order, only: [:show, :edit, :update, :destroy, :complete, :undo_complete]
 
   # GET /orders
   # GET /orders.json
@@ -51,6 +51,18 @@ class OrdersController < ApplicationController
     redirect_to customer_orders_path(@customer), notice: 'Order was successfully destroyed.'
   end
 
+  def complete
+    @order.completed = true
+    @order.save
+    redirect_to customer_orders_path(@customer)
+  end
+
+  def undo_complete
+    @order.completed = false
+    @order.save
+    redirect_to customer_orders_path(@customer)
+  end
+
   private
 
     def get_customer
@@ -64,6 +76,6 @@ class OrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def order_params
-      params.require(:order).permit(:quantity, :customer_id)
+      params.require(:order).permit(:quantity, :customer_id, :frequency, :completed)
     end
 end

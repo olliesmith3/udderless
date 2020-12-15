@@ -1,1 +1,40 @@
-<h1>orders edit</h1>
+<%= javascript_pack_tag 'order_form' %>
+
+<h1 class="title">New Order</h1>
+<div class="control">
+  <button id="one-off">
+    One Off
+  </button>
+  <button id="continuous">
+    Continuous
+  </button>
+</div>
+
+<div id="one-off-form" class="form">
+  <%= form_with(model: [@customer, @order]) do |form| %>
+    <div class="field">
+      <%= form.label "Quantity", class: "label" %>
+      <div class="control">
+        <%= form.text_field :quantity, class: "input"%>
+      </div>
+    </div>
+    <%= form.submit "Create", class: "button is-primary"  %>
+  <% end %>
+</div>
+<div id="continuous-form" class="form">
+  <%= form_with(model: [@customer, @order]) do |form| %>
+    <div class="field">
+      <%= form.label "Quantity", class: "label" %>
+      <div class="control">
+        <%= form.text_field :quantity, class: "input"%>
+      </div>
+    </div>
+    <div class="field">
+      <%= form.label "Frequency", class: "label" %>
+      <div class="control">
+        <%= form.text_field :frequency, class: "input"%>
+      </div>
+    </div>
+    <%= form.submit "Create", class: "button is-primary"  %>
+  <% end %>
+</div>

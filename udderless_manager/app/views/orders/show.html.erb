@@ -1,4 +1,30 @@
-<h1>orders show</h1>
 
-
-<%= @order.created_at %>
+<h1 class="title">Order No. <%= @order.id %></h1>
+<h1>Created at: <%= @order.created_at %></h1>
+<h1>Created by: <%= current_user.email %></h1>
+<h1>Quantity: <%= @order.quantity %></h1>
+<h1>Frequency: <%= @order.frequency %></h1>
+<h1>Customer ID: <%= @order.customer_id %></h1>
+<h1>Customer name: <%= @customer.first_name %> <%= @customer.last_name %></h1>
+<h1>Customer address: 
+  <div>
+    <%= @customer.address_line_1 %><br />
+    <%= @customer.address_line_2 %><br />
+    <%= @customer.town %><br />
+    <%= @customer.county %><br />
+    <%= @customer.postcode %><br />
+  </div>
+</h1>
+<h1>Customer email: <%= @customer.email %></h1>
+<h1>Customer phone: <%= @customer.tel %></h1>
+<% if @order.completed == true %> 
+  <div>
+    <%= button_to "Undo Complete Order", undo_complete_order_path(@customer, @order), method: :put %>
+  </div>
+<% else %>
+  <div>
+    <%= button_to "Complete", complete_order_path(@customer, @order), method: :put %>
+  </div>
+<% end %>
+<%= button_to "Edit", edit_customer_order_path(@customer, @order), method: :get %>
+<%= button_to "Delete", customer_order_path(@customer, @order), method: :delete %>
