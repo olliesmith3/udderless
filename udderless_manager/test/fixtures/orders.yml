@@ -2,8 +2,10 @@
 
 one:
   quantity: 1
-  user: one
+  frequency: 1
+  customer_id: 1
 
 two:
   quantity: 1
-  user: two
+  frequency: 2
+  customer_id: 1
