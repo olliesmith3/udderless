@@ -5,7 +5,7 @@ class App extends Component {
   render() {
     return(
       <div>
-        <div>react speaking</div>
+        <div> </div>
         <OrderForm />
       </div>
     )
