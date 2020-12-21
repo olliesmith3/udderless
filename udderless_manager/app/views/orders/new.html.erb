@@ -1,16 +1,18 @@
 <%= javascript_pack_tag 'order_form' %>
-
-<h1 class="title">New Order</h1>
-<div class="control">
-  <button id="one-off">
-    One Off
-  </button>
-  <button id="continuous">
-    Continuous
-  </button>
+<div class="order-style">
+  <h1 class="title">New Order</h1>
+  <div class="control">
+    <button id="one-off">
+      One Off
+    </button>
+    <button id="continuous">
+      Continuous
+    </button>
+  </div>
 </div>
 
-<div id="one-off-form" class="form">
+
+<div id="one-off-form" class="form order-style">
   <%= form_with(model: [@customer, @order]) do |form| %>
     <div class="field">
       <%= form.label "Quantity", class: "label" %>
@@ -21,7 +23,7 @@
     <%= form.submit "Create", class: "button is-primary"  %>
   <% end %>
 </div>
-<div id="continuous-form" class="form">
+<div id="continuous-form" class="form order-style">
   <%= form_with(model: [@customer, @order]) do |form| %>
     <div class="field">
       <%= form.label "Quantity", class: "label" %>

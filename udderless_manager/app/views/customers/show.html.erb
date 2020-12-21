@@ -1,27 +1,29 @@
-<h1 class="subtitle content">
-Name: <%= @customer.first_name %> 
-<%= @customer.last_name %></h1>
-<h1 class="subtitle content">
-  Address: 
-  <div>
-    <%= @customer.address_line_1 %><br />
-    <%= @customer.address_line_2 %><br />
-    <%= @customer.town %><br />
-    <%= @customer.county %><br />
-    <%= @customer.postcode %><br />
+<div class="customer-style">
+  <h1 class="subtitle content">
+  Name: <%= @customer.first_name %> 
+  <%= @customer.last_name %></h1>
+  <h1 class="subtitle content">
+    Address: 
+    <div>
+      <%= @customer.address_line_1 %><br />
+      <%= @customer.address_line_2 %><br />
+      <%= @customer.town %><br />
+      <%= @customer.county %><br />
+      <%= @customer.postcode %><br />
+    </div>
+  </h1>
+  <h1 class="subtitle content">Email: <%= @customer.email %></h1>
+  <h1 class="subtitle content">Phone: <%= @customer.tel %></h1>
+
+  <div class="button is-primary">
+    <%= link_to "New Order", new_customer_order_path(@customer) %>
   </div>
-</h1>
-<h1 class="subtitle content">Email: <%= @customer.email %></h1>
-<h1 class="subtitle content">Phone: <%= @customer.tel %></h1>
 
-<div class="button is-primary">
-  <%= link_to "New Order", new_customer_order_path(@customer) %>
-</div>
-
-<div class="button is-primary">
-  <% button_badge = @customer.first_name + "'s Orders" %>
-  <%= link_to button_badge, customer_orders_path(@customer) %>
-</div>
-<div class="button is-primary">
-  <%= link_to "Edit Customer Details", edit_customer_path(@customer) %>
+  <div class="button is-primary">
+    <% button_badge = @customer.first_name + "'s Orders" %>
+    <%= link_to button_badge, customer_orders_path(@customer) %>
+  </div>
+  <div class="button is-primary">
+    <%= link_to "Edit Customer Details", edit_customer_path(@customer) %>
+  </div>
 </div>

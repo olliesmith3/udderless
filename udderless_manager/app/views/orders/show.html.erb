@@ -1,34 +1,35 @@
-
-<h1 class="title">Order No. <%= @order.id %></h1>
-<h1>Created at: <%= @order.created_at %></h1>
-<h1>Created by: <%= current_user.email %></h1>
-<h1>Quantity: <%= @order.quantity %></h1>
-<h1>Frequency: <%= @order.frequency %></h1>
-<h1>Customer ID: <%= @order.customer_id %></h1>
-<h1>Customer name: <%= @customer.first_name %> <%= @customer.last_name %></h1>
-<h1>Customer address: 
-  <div>
-    <%= @customer.address_line_1 %><br />
-    <%= @customer.address_line_2 %><br />
-    <%= @customer.town %><br />
-    <%= @customer.county %><br />
-    <%= @customer.postcode %><br />
-  </div>
-</h1>
-<h1>Customer email: <%= @customer.email %></h1>
-<h1>Customer phone: <%= @customer.tel %></h1>
-<% if @order.completed == true %> 
+<div class="order-style">
+  <h1 class="title">Order No. <%= @order.id %></h1>
+  <h1>Created at: <%= @order.created_at %></h1>
+  <h1>Created by: <%= current_user.email %></h1>
+  <h1>Quantity: <%= @order.quantity %></h1>
+  <h1>Frequency: <%= @order.frequency %></h1>
+  <h1>Customer ID: <%= @order.customer_id %></h1>
+  <h1>Customer name: <%= @customer.first_name %> <%= @customer.last_name %></h1>
+  <h1>Customer address: 
+    <div>
+      <%= @customer.address_line_1 %><br />
+      <%= @customer.address_line_2 %><br />
+      <%= @customer.town %><br />
+      <%= @customer.county %><br />
+      <%= @customer.postcode %><br />
+    </div>
+  </h1>
+  <h1>Customer email: <%= @customer.email %></h1>
+  <h1>Customer phone: <%= @customer.tel %></h1>
+  <% if @order.completed == true %> 
+    <div class="button is-primary">
+      <%= link_to "Undo Complete Order", undo_complete_order_path(@customer, @order), method: :put %>
+    </div>
+  <% else %>
+    <div class="button is-primary">
+      <%= link_to "Complete", complete_order_path(@customer, @order), method: :put %>
+    </div>
+  <% end %>
   <div class="button is-primary">
-    <%= link_to "Undo Complete Order", undo_complete_order_path(@customer, @order), method: :put %>
+    <%= link_to "Edit", edit_customer_order_path(@customer, @order), method: :get %>
   </div>
-<% else %>
   <div class="button is-primary">
-    <%= link_to "Complete", complete_order_path(@customer, @order), method: :put %>
+    <%= link_to "Delete", customer_order_path(@customer, @order), method: :delete, data: { confirm: "Are you sure?" }%>
   </div>
-<% end %>
-<div class="button is-primary">
-  <%= link_to "Edit", edit_customer_order_path(@customer, @order), method: :get %>
-</div>
-<div class="button is-primary">
-  <%= link_to "Delete", customer_order_path(@customer, @order), method: :delete %>
 </div>
