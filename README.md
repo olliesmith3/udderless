@@ -21,4 +21,11 @@ This project is made up of two parts:
       - If a customer is not withing the postcode range then allow them to register interest.
       - Send confirmation emails.
       - Accessible to blind and deaf.
+      
+ #### Mapbox
+ 
+    - This API has a geocoding tool and a navigation tool
+    - Firstly, I converted the customer addresses to coordinates with the geocoding tool
+    - The coordinates can then be added as waypoints in the navigation tool
+    - This allows a planning of a route for delivery days
 
