@@ -16,7 +16,7 @@ This project is made up of two parts:
       - Search for customers and orders.
       - print off an order form for each delivery day.
       
-  - Customer site
+  - [Customer Site - Click Here](https://github.com/olliesmith3/udderless_customer_site)
       - Initially (before Udderless launch) this site needs to simply allow customers to register interest and display About information.\
         - Look good in the theme of the UDDERLESS brand.
 
