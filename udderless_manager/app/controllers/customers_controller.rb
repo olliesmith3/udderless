@@ -42,7 +42,7 @@ class CustomersController < ApplicationController
   end
 
   def check_staff
-    unless current_user.email == "ollie@udderless.co.uk"
+    unless ["ollie@udderless.co.uk", "luke@udderless.co.uk", "barny@udderless.co.uk"].include?( current_user.email )
       redirect_to root_path, notice: "You are not one of the boys" 
     end
   end

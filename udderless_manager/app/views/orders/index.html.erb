@@ -1,4 +1,7 @@
 <section class="section">
+  <div class="button is-primary">
+    <%= link_to "Back To #{@customer.first_name}", customer_path(@customer) %>
+  </div>
   <% @orders[0..9].each do |order| %>
     <div class="container">
       <div class="card">
@@ -6,8 +9,12 @@
           <div class="media">
             <div class="media-content">
               <p class="subtitle is-4">
-                <% complete_status = order.completed ? "Completed" : "Not Completed" %>
-                <% link_badge = "Order Number: " + order.id.to_s + order.created_at.strftime(" | Created on %m/%d/%Y  at %I:%M%p").to_s + " | Status: " + complete_status%>
+                <% if order.completed == true %>
+                <%   status = "Completed" %>
+                <% else %>
+                <%   status = order.cancelled ? "Cancelled" : "Not Completed" %>
+                <% end %>
+                <% link_badge = "Order Number: " + order.id.to_s + order.created_at.strftime(" | Created on %m/%d/%Y  at %I:%M%p").to_s + " | Status: " + status %>
                 <%= link_to link_badge, customer_order_path(@customer.id, order.id) %>
               </p>
             </div>

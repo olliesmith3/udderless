@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
-  before_action :get_customer
-  before_action :set_order, only: [:show, :edit, :update, :destroy, :complete, :undo_complete]
+  before_action :get_customer, :authenticate_user!, :check_staff
+  before_action :set_order, only: [:show, :edit, :update, :destroy, :complete, :undo_complete, :cancel, :undo_cancel]
 
   # GET /orders
   # GET /orders.json
@@ -63,19 +63,37 @@ class OrdersController < ApplicationController
     redirect_to customer_orders_path(@customer)
   end
 
+  def cancel
+    @order.cancelled = true
+    @order.save
+    redirect_to customer_orders_path(@customer)
+  end
+
+  def undo_cancel
+    @order.cancelled = false
+    @order.save
+    redirect_to customer_orders_path(@customer)
+  end
+
   private
 
-    def get_customer
-      @customer = Customer.find(params[:customer_id])
+  def check_staff
+    unless ["ollie@udderless.co.uk", "luke@udderless.co.uk", "barny@udderless.co.uk"].include?( current_user.email )
+      redirect_to root_path, notice: "You are not one of the boys" 
     end
+  end
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_order
-      @order = @customer.orders.find(params[:id])
-    end
+  def get_customer
+    @customer = Customer.find(params[:customer_id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def order_params
-      params.require(:order).permit(:quantity, :customer_id, :frequency, :completed)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_order
+    @order = @customer.orders.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def order_params
+    params.require(:order).permit(:quantity, :customer_id, :frequency, :completed, :cancelled, :created_by)
+  end
 end

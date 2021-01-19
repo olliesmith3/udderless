@@ -37,6 +37,11 @@
         <%= form.text_field :frequency, class: "input"%>
       </div>
     </div>
+    <div class="field">
+      <div class="control">
+        <%= form.hidden_field :created_by, class: "input", value: current_user.email%>
+      </div>
+    </div>
     <%= form.submit "Create", class: "button is-primary"  %>
   <% end %>
 </div>

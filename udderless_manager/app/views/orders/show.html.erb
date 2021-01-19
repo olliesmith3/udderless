@@ -1,7 +1,7 @@
 <div class="order-style">
   <h1 class="title">Order No. <%= @order.id %></h1>
   <h1>Created at: <%= @order.created_at %></h1>
-  <h1>Created by: <%= current_user.email %></h1>
+  <h1>Created by: <%= @order.created_by %></h1>
   <h1>Quantity: <%= @order.quantity %></h1>
   <h1>Frequency: <%= @order.frequency %></h1>
   <h1>Customer ID: <%= @order.customer_id %></h1>
@@ -24,6 +24,15 @@
   <% else %>
     <div class="button is-primary">
       <%= link_to "Complete", complete_order_path(@customer, @order), method: :put %>
+    </div>
+  <% end %>
+  <% if @order.cancelled == true %> 
+    <div class="button is-primary">
+      <%= link_to "Undo Cancel Order", undo_cancel_order_path(@customer, @order), method: :put %>
+    </div>
+  <% else %>
+    <div class="button is-primary">
+      <%= link_to "Cancel Order", cancel_order_path(@customer, @order), method: :put %>
     </div>
   <% end %>
   <div class="button is-primary">
