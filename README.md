@@ -17,10 +17,15 @@ This project is made up of two parts:
       - print off an order form for each delivery day.
       
   - Customer site
-      - Allow customers to manage their orders.
-      - If a customer is not withing the postcode range then allow them to register interest.
-      - Send confirmation emails.
-      - Accessible to blind and deaf.
+      - Initially (before Udderless launch) this site needs to simply allow customers to register interest and display About information.\
+        - Look good in the theme of the UDDERLESS brand.
+
+      - After the launch
+        - Allow customers to manage their orders.
+        - If a customer is not withing the postcode range then allow them to register interest.
+        - Send confirmation emails.
+        - Accessible to blind and deaf.
+  
       
  #### Mapbox
  
