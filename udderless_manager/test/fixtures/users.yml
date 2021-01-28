@@ -5,7 +5,10 @@
 # below each fixture, per the syntax in the comments below
 #
 one: 
-  email: ollie@ollie.com
+  id: 1
+  email: ollie@udderless.co.uk
+  encrypted_password: <%= User.new.send(:password_digest, 'udderless') %>
+
 
 two: 
   email: luke@luke.com
