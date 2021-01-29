@@ -30,9 +30,11 @@
             <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
           </div>
           <% else %>
-          <div class="button is-primary">
-            <%= link_to 'Sign Up', new_user_registration_path %>
-          </div>
+            <% if !current_page?('/users/sign_up') %>
+            <div class="button is-primary">
+              <%= link_to 'Sign Up', new_user_registration_path %>
+            </div>
+            <% end %>
           <div class="button is-primary">
             <%= link_to 'Log in', new_user_session_path %>
           </div>
