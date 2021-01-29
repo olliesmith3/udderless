@@ -53,4 +53,24 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to customer_orders_url(@customer)
   end
+
+  test "should complete order" do
+    put complete_order_url(customer_id: @order.customer_id, id: @order.id)
+    assert_redirected_to customer_orders_url(@customer)
+  end
+
+  test "should undo complete order" do
+    put undo_complete_order_url(customer_id: @order.customer_id, id: @order.id)
+    assert_redirected_to customer_orders_url(@customer)
+  end
+
+  test "should cancel order" do
+    put cancel_order_url(customer_id: @order.customer_id, id: @order.id)
+    assert_redirected_to customer_orders_url(@customer)
+  end
+
+  test "should undo cancel order" do
+    put undo_cancel_order_url(customer_id: @order.customer_id, id: @order.id)
+    assert_redirected_to customer_orders_url(@customer)
+  end
 end
