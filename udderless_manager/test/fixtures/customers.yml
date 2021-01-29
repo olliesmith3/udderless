@@ -1,8 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  first_name: MyString
-  last_name: MyString
+  id: 1
+  first_name: Ollie
+  last_name: Smith
   address_line_1: MyString
   address_line_2: MyString
   town: MyString
@@ -12,8 +13,9 @@ one:
   tel: MyString
 
 two:
-  first_name: MyString
-  last_name: MyString
+  id: 2
+  first_name: Luke
+  last_name: Ashwood
   address_line_1: MyString
   address_line_2: MyString
   town: MyString
