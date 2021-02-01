@@ -15,6 +15,8 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
 
     if @customer.save
+      # Tell the CustomerMailer to send a welcome email after save
+      CustomerMailer.with(customer: @customer).welcome_email.deliver_later
       redirect_to @customer
     else
       render 'new'

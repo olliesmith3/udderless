@@ -34,3 +34,8 @@ This project is made up of two parts:
     - The coordinates can then be added as waypoints in the navigation tool
     - This allows a planning of a route for delivery days
 
+### Setting up mailer 
+
+previously when working on a facebook clone rails project, I had done my confirmation and password reset emails using the Devise Gem. In order to personalise the mailers for my customer class - I didn't use the Devise gem.
+
+

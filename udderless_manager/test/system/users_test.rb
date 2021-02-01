@@ -2,14 +2,9 @@ require "application_system_test_case"
 require_relative "../helpers/user_helpers"
 
 class UsersTest < ApplicationSystemTestCase
-  test "visiting the homepage" do
-    visit root_url
-  
-    assert_selector "h1", text: "Welcome"
-  end
-
-  test "User Sign Up" do
+  test "User Sign up then Sign Out" do
     sign_up
-    assert_text "Welcome! You have signed up successfully."
+    click_on "Log out"
+    assert_text "Signed out successfully."
   end
 end
