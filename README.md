@@ -13,6 +13,7 @@ This project is made up of two parts:
   - Staff site
       - Log in to website as staff (authenticated)
       - Connect to a database and store customer data and order data.
+      - Email confirmations.
       - Search for customers and orders.
       - print off an order form for each delivery day.
       
@@ -25,17 +26,23 @@ This project is made up of two parts:
         - If a customer is not withing the postcode range then allow them to register interest.
         - Send confirmation emails.
         - Accessible to blind and deaf.
-  
-      
- #### Mapbox
- 
-    - This API has a geocoding tool and a navigation tool
-    - Firstly, I converted the customer addresses to coordinates with the geocoding tool
-    - The coordinates can then be added as waypoints in the navigation tool
-    - This allows a planning of a route for delivery days
 
 ### Setting up mailer 
 
-previously when working on a facebook clone rails project, I had done my confirmation and password reset emails using the Devise Gem. In order to personalise the mailers for my customer class - I didn't use the Devise gem.
+previously when working on a facebook clone rails project, I had done my confirmation and password reset emails using the Devise Gem. In order to personalise the mailers for my customer class - I didn't use the Devise gem. The mailer sends an email when a customer is signed up and when an order is made
 
+### Deployment
+
+Online resources suggest that the best option for free tier deployment of a rails project is Heroku
+
+#### Mapbox Spike
+ 
+This API has a geocoding tool and a navigation tool
+Firstly, I converted the customer addresses to coordinates with the geocoding tool
+The coordinates can then be added as waypoints in the navigation tool
+This allows a planning of a route for delivery days
+
+### The To Do List
+
+- Add delivery date or day of the week to orders (then add this to the )
 

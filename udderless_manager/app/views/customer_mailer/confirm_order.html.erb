@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <% quantity_pluraliser = @order.quantity == 1 ? "" : "s" %>
+    <% frequency_pluraliser = @order.frequency == 1 ? "week" : "#{@order.frequency} weeks" %>
+    <h1>Thank you for your Udderless order, <%= @customer.first_name %></h1>
+    <p>
+    You have ordered <%= @order.quantity %> litre bottle<%= quantity_pluraliser %>.
+    </p>
+    <p>
+    <% if @order.frequency != nil %>
+    This order will be repeated every <%= frequency_pluraliser %>.
+    <% end %>
+    </p>
+    <p>
+    To view your order or make an edit, just follow this link: <%= @url %>.
+    </p>
+    <p>Thanks and have a great day!
+    <%= image_tag("TM-logo.gif") %></p>
+  </body>
+</html>

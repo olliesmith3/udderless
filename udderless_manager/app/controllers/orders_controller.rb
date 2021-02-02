@@ -28,6 +28,8 @@ class OrdersController < ApplicationController
     @order = @customer.orders.build(order_params)
 
     if @order.save
+      # Tell the CustomerMailer to send an order confirmation email after save
+      CustomerMailer.with(customer: @customer, order: @order).confirm_order.deliver_later
       redirect_to customer_orders_path(@customer), notice: 'Order was successfully created.' 
     else
       render :new 
