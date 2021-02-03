@@ -42,3 +42,6 @@ yarn-debug.log*
 
 #environment variables
 /config/local_env.yml
+
+#test coverage
+coverage/*
