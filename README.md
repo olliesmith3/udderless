@@ -8,24 +8,6 @@ Udderless is a pre-seed startup that produces and delivers organic oat milk to c
     - A staff website to manage customers, orders and deliveries
     - A customer facing site that lets people manage their orders and register interest
 
-### How to set up and use
-
-Clone the repository, change into the udderless_manager directory and run the following: 
-```
-$ bundle install
-$ rails db:setup 
-$ rails db:migrate
-$ rails start
-```
-Then go to localhost:3000. Remove ':check_staff' from line 2 of both /app/controllers/customers_controller.rb and /app/controllers/orders_controller.rb so that you can interact with the site.
-In order to run the tests:
-```
-$ rails test
-```
-Or the system tests:
-```
-$ rails test:system
-```
 ### Requirements - based off of regular talks with the directors
 
   - Staff site
@@ -45,6 +27,25 @@ $ rails test:system
         - If a customer is not withing the postcode range then allow them to register interest.
         - Send confirmation emails.
         - Accessible to blind and deaf.
+
+### How to set up and use
+
+Clone the repository, change into the udderless_manager directory and run the following: 
+```
+$ bundle install
+$ rails db:setup 
+$ rails db:migrate
+$ rails start
+```
+Then go to localhost:3000. Remove ':check_staff' from line 2 of both /app/controllers/customers_controller.rb and /app/controllers/orders_controller.rb so that you can interact with the site.
+In order to run the tests:
+```
+$ rails test
+```
+Or the system tests:
+```
+$ rails test:system
+```
 
 ### Setting up mailer 
 
