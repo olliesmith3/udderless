@@ -1,4 +1,6 @@
-class Api::V1::InterestsController < ApplicationController
+class Api::CustomerPortalV1::InterestsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  
   def index
     render json: Interest.all
   end

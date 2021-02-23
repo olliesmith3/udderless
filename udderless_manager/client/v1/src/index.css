@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+}
+
+.NavBar {
+  font-family: 'LobsterTwo-Regular', cursive;
+  font-size: 30px;
+}
+
+.interest-form {
+  margin-top: 5%;
+  font-family: 'LobsterTwo-Regular', cursive;
+}
+
+@font-face {
+  font-family: 'LobsterTwo-Regular';
+  src: local('LobsterTwo-Regular'), url(./assets/fonts/LobsterTwo-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato-Regular';
+  src: local('Lato-Regular'), url(./assets/fonts/Lato-Regular.ttf) format('truetype');
+}

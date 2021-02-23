@@ -1,0 +1,27 @@
+label {
+  font-size: 28px;
+  text-align: right;
+  float: left;
+  clear: left;
+}
+
+input {
+  float:right;
+  height: 40px;
+  width: 50%;
+}
+
+.interest-form {
+  margin-top: 10%;
+  margin-right: auto;
+  margin-left: auto;
+  width: 60%
+}
+
+.submit-button {
+  float: right;
+  clear: right;
+  margin-top: 10px;
+  width: 50%;
+  font-size: 28px;
+}

@@ -9,4 +9,9 @@ Rails.application.routes.draw do
   resources :customers do
     resources :orders
   end
+  namespace :api do 
+    namespace :customer_portal_v1 do 
+     resources :interests, only: [:index, :create]
+    end 
+  end
 end
