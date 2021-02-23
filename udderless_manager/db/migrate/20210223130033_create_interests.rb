@@ -3,7 +3,7 @@ class CreateInterests < ActiveRecord::Migration[6.0]
     create_table :interests do |t|
       t.string :first_name
       t.string :postcode
-      t.string :email
+      t.email :email
       t.string :tel
 
       t.timestamps
