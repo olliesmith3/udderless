@@ -68,13 +68,13 @@ yarn start
 ```
 Now open up localhost:3000 in your browser and begin using the customer portal v1:
 
-![HomePage](./client/v1/public/README-images/homepage.png?raw=true "Home Page")
+![HomePage](./public/README-images/homepage.png?raw=true "Home Page")
 This page is simply for customers to learn a bit more about the company
 
-![Register Interest Form](./client/v1/public/README-images/register-interest-form.png?raw=true "Register Interest Form")
+![Register Interest Form](./public/README-images/register-interest-form.png?raw=true "Register Interest Form")
 This form is where potential customers can register their interest. First name and postcode are compulsory fields whereas it is only compulsory for one of either email or telephone to be filled.
 
-![Thank You Message](./client/v1/public/README-images/thank-you-message.png?raw=true "Thank You Message")
+![Thank You Message](./public/README-images/thank-you-message.png?raw=true "Thank You Message")
 The thank you message presented is tailored to the customer's name and postcode.
 
 Visit localhost:3001 to use the staff site. To gain full access to the staff site: Remove ':check_staff' from line 2 of both /app/controllers/customers_controller.rb and /app/controllers/orders_controller.rb.
