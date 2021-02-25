@@ -110,7 +110,7 @@ To configure the mailer with GMail I had to set up 2FA on my google account (cre
 
 Online reviews suggest that the best option for free tier deployment of a rails project is Heroku
 
-#### Mapbox API Spike
+### Mapbox API Spike
 
 - The purpose of this spike was to try to get the API to plan a route when provided with a list of addresses.
  
