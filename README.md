@@ -1,20 +1,21 @@
 ### Udderless
-![Logo](./client/src/assets/images/TM-logo-final-1.gif?raw=true "Logo")
+![Logo](./client/v1/src/assets/images/TM-logo-final-1.gif?raw=true "Logo")
 ### What is udderless?
 
 Udderless is a new company that produces and delivers organic oat milk to customers in SW London.
 
-This project is made up of two parts: 
+- This project is made up of two parts: 
     - a staff website to manage customers, orders and deliveries
     - a customer facing site that lets people manage their orders and register interest
 
 ### Requirements 
 
-  - [Staff Site - Click Here](https://github.com/olliesmith3/udderless)
-      - Log in to website as staff (authenticated)
-      - Connect to a database and store customer data and order data.
+  - Staff Site
+      - Log in to website as staff
+      - Store and manage customer data and order data.
       - Search for customers and orders.
-      - print off an order form for each delivery day.
+      - Plan and view a route for each delivery day.
+      - Email confirmations to customer.
       
   - Customer site
     - v1
@@ -38,6 +39,10 @@ This project is made up of two parts:
 
 - Rails API and Postgres database
     - Already understand these technologies so will avoid having too many moving parts.
+
+- Typescript for v2
+    - Wanted to learn a statically-typed language
+    - In addition to tests will provide extra reliability
 
 ### How to use
 
@@ -63,13 +68,13 @@ yarn start
 ```
 Now open up localhost:3000 in your browser and begin using the customer portal v1:
 
-![HomePage](./client/public/README-images/homepage.png?raw=true "Home Page")
+![HomePage](./client/v1/public/README-images/homepage.png?raw=true "Home Page")
 This page is simply for customers to learn a bit more about the company
 
-![Register Interest Form](./client/public/README-images/register-interest-form.png?raw=true "Register Interest Form")
+![Register Interest Form](./client/v1/public/README-images/register-interest-form.png?raw=true "Register Interest Form")
 This form is where potential customers can register their interest. First name and postcode are compulsory fields whereas it is only compulsory for one of either email or telephone to be filled.
 
-![Thank You Message](./client/public/README-images/thank-you-message.png?raw=true "Thank You Message")
+![Thank You Message](./client/v1/public/README-images/thank-you-message.png?raw=true "Thank You Message")
 The thank you message presented is tailored to the customer's name and postcode.
 
 Visit localhost:3001 to use the staff site. To gain full access to the staff site: Remove ':check_staff' from line 2 of both /app/controllers/customers_controller.rb and /app/controllers/orders_controller.rb.
@@ -84,33 +89,17 @@ $ yarn test
 
 ### What I will be working on next
 
-- Authorisation of interests - to avoid multiple sign ups from the same customer need to check database that email or tel hasnt been registered before.
+- Customer Portal
+    - Authorisation of interests - to avoid multiple sign ups from the same customer need to check database that email or tel hasnt been registered before.
+    - Completing ARIA labels and making accessible for screen readers
+    - Deployment - Previously I have used Google cloud and Heroku
+    - Get started with version 2!
 
-- Completing ARIA labels and making accessible for screen readers
-
-- Deployment - Previously I have used Google cloud and Heroku
-
-- Get started with version 2!
-
-
-### How to set up and use
-
-Clone the repository, change into the udderless_manager directory and run the following: 
-```
-$ bundle install
-$ rails db:setup 
-$ rails db:migrate
-$ rails start
-```
-Then go to localhost:3000. Remove ':check_staff' from line 2 of both /app/controllers/customers_controller.rb and /app/controllers/orders_controller.rb so that you can interact with the site.
-In order to run the tests:
-```
-$ rails test
-```
-Or the system tests:
-```
-$ rails test:system
-```
+- Staff site
+    - Add delivery date or day of the week to orders (then add this to the mailers)
+    - Complete deployment of both sites.
+    - Configure simplecov for accurate coverage.
+    - Add in search function for customers
 
 ### Setting up mailer 
 
@@ -130,9 +119,4 @@ Online reviews suggest that the best option for free tier deployment of a rails 
   - The coordinates can then be added as waypoints in the navigation tool
   - This allows a planning of a route for delivery days
 
-### The To Do List
-
-- Add delivery date or day of the week to orders (then add this to the mailers)
-- Complete deployment of both sites.
-- Configure simplecov for accurate coverage
 
